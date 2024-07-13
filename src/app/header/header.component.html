@@ -1,0 +1,18 @@
+<div class="header">
+    <div class="company-name">
+        <span style="font-size: 50px; font-family: fantasy;">Kroos</span>
+    </div>
+    <div class="navigation-links">
+        <span *ngFor="let tab of tab_names_enum; let i = index"
+            [ngClass]="{'nav-link-items-active': active_tab === tab, 'nav-link-items': active_tab !== tab}"
+            (click)="tabClicked(tab_names_enum[i])">
+            {{tab_names[i]}}</span>
+    </div>
+</div>
+
+<div class="body" *ngIf="active_tab === tab_names_enum[0]"><app-home-page></app-home-page></div>
+<div class="body" *ngIf="active_tab === tab_names_enum[1]"><app-beer-listing-page></app-beer-listing-page></div>
+<div class="body" *ngIf="active_tab === tab_names_enum[2]"><app-manifesto-page></app-manifesto-page></div>
+<div class="body" *ngIf="active_tab === tab_names_enum[3]"><app-campaigns-page></app-campaigns-page></div>
+<div class="body" *ngIf="active_tab === tab_names_enum[4]"><app-about-us-page></app-about-us-page></div>
+
